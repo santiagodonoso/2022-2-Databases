@@ -1,0 +1,21 @@
+{
+    "id": "user_1",
+    "version": "1.0.0",
+    "name": "A",
+    "friendships": [
+        {
+            "id": "friendship_3",
+            "version": "1.0.0",
+            "created_at": 1667814348,
+            "friender_id": "user_1",
+            "befriended_id": "user_4"
+        },
+        {
+            "id": "friendship_2",
+            "version": "1.0.0",
+            "created_at": 1667814301,
+            "friender_id": "user_1",
+            "befriended_id": "user_3"
+        }
+    ]
+}
