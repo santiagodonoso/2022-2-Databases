@@ -1,0 +1,63 @@
+{
+    "id":"siblingC",
+    "name":"Sibling C",
+    "lastName": "B",
+    "email":"@siblingC",
+    "password":"passC",
+    "gender":"female",
+    "phones":[],
+    "father":{
+        "id":"father",
+        "name":"Dad",
+        "last_name":"Dad's last name",
+        "gender":"male",
+        "email":"@dad",
+        "phones": []
+    },
+    "mother":{
+        "id":"mother",
+        "name":"Mom",
+        "lastName": "Mom's last name",
+        "gender":"female",
+        "email":"@mom",
+        "phones":[
+            {"type":"mobile", "phone":"555"}
+        ]
+    },
+    "siblings":[
+        {
+            "id":"abc23",
+            "name":"A",
+            "lastName": "B",
+            "email":"@a",
+            "gender":"female",
+            "phones":[
+                {"type":"mobile", "phone":"111"},
+                {"type":"mobile", "phone":"222"},
+                {"type":"land", "phone":"333"}
+            ]
+        },
+        {
+            "id":"siblingA",
+            "name":"Sibling A",
+            "lastName": "B",
+            "email":"@siblingA",
+            "gender":"female",
+            "phones":[
+                {"type":"mobile", "phone":"888"}
+            ]
+        },
+        {
+            "id":"siblingB",
+            "name":"Sibling B",
+            "lastName": "B",
+            "email":"@siblingB",
+            "gender":"male",
+            "phones":[
+                {"type":"mobile", "phone":"999"}
+            ]
+        } 
+    ],
+    "kids":[],
+    "spouse":{}
+}

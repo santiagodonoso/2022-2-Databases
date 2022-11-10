@@ -1,0 +1,12 @@
+{
+    "id": "user_3",
+    "version": "1.0.0",
+    "name": "C",
+    "friendships": [{
+        "id": "friendship_2",
+        "version": "1.0.0",
+        "created_at": 1667814301,
+        "friender_id": "user_1",
+        "befriended_id": "user_3"
+    }]
+}

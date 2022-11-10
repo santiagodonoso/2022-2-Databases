@@ -1,0 +1,21 @@
+{
+  "id":"user_1",
+  "version":"1.0.0",
+  "name":"A",
+  "tweets":[
+    {
+      "id":"tweet_500",
+      "version":"1.0.0",
+      "created_at":1667813500,
+      "message":"Super tweet",
+      "user_id":"user_1"
+    },
+    {
+      "id":"tweet_1000",
+      "version":"1.0.0",
+      "created_at":1667813688,
+      "message":"My 1000th tweet",
+      "user_id":"user_1"
+    }            
+  ]
+}
