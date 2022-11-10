@@ -1,9 +1,0 @@
-{
-  "id":"user_1",
-  "liked_items":[
-    {
-      "id":"item_1",
-      "price":10
-    }
-  ]
-}
