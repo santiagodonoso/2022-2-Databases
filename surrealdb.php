@@ -11,7 +11,7 @@ SurrealDB client
 surreal sql --conn http://localhost:8000 --user root --pass root --ns company --db company --pretty
 */
 
-function surrealdb($query, $lets, $host='http://localhost', $port=8000){ 
+function surrealdb($query, $lets = [], $host='http://localhost', $port=8000){ 
   try{
     // Create secure lets
     $variables = '';
@@ -40,11 +40,11 @@ function surrealdb($query, $lets, $host='http://localhost', $port=8000){
     curl_setopt($ch, CURLOPT_USERPWD, 'root:root');
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     $response = curl_exec($ch);
-    if(!$response = curl_exec($ch)){
+    if(!$response){
       throw new Exception('Cannot connect to SurrealDB');
     }
     curl_close($ch);
-    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE) ?? "500"; // MAC maybe comment this out
+    $http_code = curl_getinfo($ch, CURLINFO_RESPONSE_CODE) ?? "500"; // MAC maybe comment this out
     if( $http_code != 200){ throw new Exception($response); }// MAC maybe comment this out
     // echo $response;
     return $response;

@@ -1,0 +1,103 @@
+##############################
+users collection
+{
+  "id":"1",
+  "name":"A", // you should index since you will be searching by name
+  "email":"@a", // unique this will automatically index
+  "password":"passA",
+  "latest_tweets":[ // Keep here the user's latest 100 tweets
+    {
+      "id":"1", // string
+      "created_at":12345764, // integer
+      "text":"First tweet", // string
+      "user_id":"1",
+      "image":null // I prefer to use "" and in numbers maybe a 0
+    }
+    {
+      "id":"2", 
+      "created_at":34512298, 
+      "text":"Second tweet",
+      "user_id":"1",
+      "image":"people.png"
+    }
+  ]
+}
+{
+  "id":"2",
+  "name":"B",
+  "email":"@b",
+  "password":"passb",
+  "tweets":[]
+}
+
+##############################
+TWEETS COLLECTION
+{
+  "id":"1", // string
+  "created_at":12345764, // integer
+  "text":"First tweet", // string
+  "user_id":"1",
+  "image":null // I prefer to use "" and in numbers maybe a 0
+}
+{
+  "id":"2", 
+  "created_at":34512298, 
+  "text":"Second tweet",
+  "user_id":"1",
+  "image":"people.png"
+}
+
+##############################
+GRAPH Database
+Relate user:1->tweeted->tweet:1 SET created_at=time::now()
+Relate user:1->tweeted->tweet:2 SET created_at=time::now()
+
+
+
+##############################
+
+FK must be the exact same data type as the PK
+
+users
+id        PK UNIQUE BIGINT 20 AUTOINCREMENT UNSIGNED SERIAL
+name      VARCHAR 20
+email     VARCHAR 100
+password  VARCHAR 255 // hashed password take more space than the real password
+
+tweets
+id            PK UNIQUE BIGINT 20 AUTOINCREMENT UNSIGNED SERIAL
+created_at    int unsigned
+user_fk       BIGINT 20 UNSGINED
+
+tweets_images   
+id PK          
+tweet_fk  
+image   
+
+tweets_text
+id PK
+tweet_fk  
+text     
+
+tweets_text
+tweet_fk        text
+1               Hi there
+
+
+
+
+##############################
+IN-MEMORY REDIS MEMCACHED ARANGO SURREAL
+CACHE DATA
+
+KEY               VALUE
+barackobama       latest 1000 tweets
+elonmusk          latest 1000 tweets
+
+
+STORED PROCEDURE
+4 table and you join them
+the join happens in the procedure and the DB administrator
+calls the procedure "get_all_data"
+faster, and secure
+SQL panel: CALL get_all_data()

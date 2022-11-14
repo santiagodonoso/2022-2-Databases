@@ -1,0 +1,15 @@
+CREATE user:a SET name="A";
+CREATE user:b SET name="B";
+CREATE user:c SET name="C";
+CREATE item:x SET name="X", price=1;
+CREATE item:y SET name="Y", price=2;
+CREATE item:z SET name="Z", price=3;
+RELATE user:a->friended->user:c;
+RELATE user:c->friended->user:b;
+RELATE user:a->likes->item:x;
+RELATE user:b->likes->item:y;
+RELATE user:c->likes->item:x;
+RELATE user:c->likes->item:y;
+RELATE user:a->bought->item:x;
+RELATE user:a->bought->item:y;
+RELATE user:b->bought->item:z;
